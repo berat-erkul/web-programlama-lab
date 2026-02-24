@@ -126,8 +126,8 @@ function App() {
         <p>© 2025 Berat Erkul. Tüm hakları saklıdır.</p>
         <nav aria-label="Sosyal medya">
           <ul className="footer-links">
-            <li><a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-            <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub (yeni sekmede açılır)">GitHub</a></li>
+            <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (yeni sekmede açılır)">LinkedIn</a></li>
           </ul>
         </nav>
       </footer>
