@@ -24,16 +24,39 @@ function App() {
             <img src="/profil.jpg" alt="Berat Erkul'in vesikalik fotografi" />
             <figcaption>Berat Erkul</figcaption>
           </figure>
+          <p>
+            Web tasarımı ve programlama alanında kendimi geliştiriyorum. Semantik HTML,
+            erişilebilirlik ve modern front-end teknolojileri ile kullanıcı odaklı arayüzler
+            oluşturmayı hedefliyorum.
+          </p>
+          <p>Kullandığım teknolojiler:</p>
+          <ul>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>Vite</li>
+          </ul>
         </section>
 
         <section id="projeler">
           <h2>Projelerim</h2>
           <article>
             <h3>Web LAB-1 - Vite React Projesi</h3>
+            <p>
+              Vite ile oluşturulmuş React uygulaması. Hızlı geliştirme deneyimi ve modern
+              build araçları ile tek sayfa uygulama (SPA) yapısı.
+            </p>
+            <p><strong>Kullanılan teknolojiler:</strong> React, Vite, TypeScript</p>
             <img src="/proje1.png" alt="LAB-1 Vite React projesi ana sayfa ekran görüntüsü" />
           </article>
           <article>
             <h3>Kişisel Portföy Sayfası</h3>
+            <p>
+              Semantik HTML, erişilebilirlik ilkeleri ve doğrulamalı iletişim formu içeren
+              tek sayfalık kişisel portföy. Skip link, ARIA etiketleri ve anlamlı yapı.
+            </p>
+            <p><strong>Kullanılan teknolojiler:</strong> HTML5, CSS3, React, Vite</p>
             <img src="/proje2.png" alt="Semantik HTML ile hazırlanan portföy sayfası ekran görüntüsü" />
           </article>
         </section>
@@ -101,6 +124,12 @@ function App() {
 
       <footer>
         <p>© 2025 Berat Erkul. Tüm hakları saklıdır.</p>
+        <nav aria-label="Sosyal medya">
+          <ul className="footer-links">
+            <li><a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          </ul>
+        </nav>
       </footer>
     </>
   )

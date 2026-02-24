@@ -3,6 +3,123 @@
   padding: 2rem;
   box-sizing: border-box;
   position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Header ve navigasyon */
+header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  margin: 0 0 0.75rem 0;
+}
+
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.25rem;
+}
+
+header nav a {
+  color: #1e3a8a;
+  text-decoration: none;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+/* Bölümler */
+main section {
+  margin-bottom: 2.5rem;
+}
+
+main section h2 {
+  font-size: 1.25rem;
+  margin: 0 0 1rem 0;
+  color: #1a1a2e;
+}
+
+#hakkimda figure {
+  margin: 0 0 1rem 0;
+}
+
+#hakkimda img {
+  max-width: 180px;
+  height: auto;
+  border-radius: 8px;
+}
+
+#hakkimda p,
+#projeler article p {
+  margin: 0 0 0.75rem 0;
+  line-height: 1.5;
+}
+
+#hakkimda ul {
+  margin: 0 0 1rem 0;
+  padding-left: 1.5rem;
+}
+
+/* Proje kartları */
+#projeler article {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+#projeler article:last-child {
+  margin-bottom: 0;
+}
+
+#projeler article h3 {
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem 0;
+}
+
+#projeler article img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-top: 0.75rem;
+}
+
+/* Footer */
+footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding-top: 1rem;
+  margin-top: 2rem;
+}
+
+footer p {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+footer .footer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+}
+
+footer .footer-links a {
+  color: #1e3a8a;
+  text-decoration: none;
+}
+
+footer .footer-links a:hover {
+  text-decoration: underline;
 }
 
 /* Skip link: normalde gizli, Tab ile focus'ta görünür */
