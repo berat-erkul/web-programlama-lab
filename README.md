@@ -7,10 +7,11 @@ Bu proje, Web Tasarimi ve Programlama dersi LAB-1 kapsaminda Vite + React + Type
 - **Ad Soyad:** Berat Erkul
 - **Ogrenci No:** 225542012
 
-## Kullanilan Teknolojiler
-- React 18
-- TypeScript
-- Vite
+## Ekran Goruntusu1
+<img width="575" height="379" alt="Screenshot 2026-02-24 at 20 22 52" src="https://github.com/user-attachments/assets/4e1f5f84-4383-4eb0-a462-add5279db2ae" />
+
+## Ekran Goruntusu2
+<img width="707" height="923" alt="Screenshot 2026-02-24 at 21 03 50" src="https://github.com/user-attachments/assets/d74c6864-1275-41f8-9e00-96f9ea360b87" />
 
 ## Kurulum
 ```bash
@@ -21,8 +22,5 @@ npm install
 ```bash
 npm run dev
 ```
+
 Tarayicida http://localhost:5173 adresini ac.
-
-## Ekran Goruntusu
-<img width="550" height="408" alt="Screenshot 2026-02-24 at 14 54 07" src="https://github.com/user-attachments/assets/11685a8e-b37f-4509-baf9-7d5eae226489" />
-
