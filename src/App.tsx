@@ -4,6 +4,7 @@ function App() {
   return (
     <>
       <header>
+        <h1>Berat Erkul - Kişisel Portföy</h1>
         <nav>
           <ul>
             <li><a href="#hakkimda">Hakkımda</a></li>
@@ -16,12 +17,22 @@ function App() {
       <main>
         <section id="hakkimda">
           <h2>Hakkımda</h2>
-          {/* icerik buraya */}
+          <figure>
+            <img src="/profil.jpg" alt="Berat Erkul'in vesikalik fotografi" />
+            <figcaption>Berat Erkul</figcaption>
+          </figure>
         </section>
 
         <section id="projeler">
           <h2>Projelerim</h2>
-          {/* icerik buraya */}
+          <article>
+            <h3>Web LAB-1 - Vite React Projesi</h3>
+            <img src="/proje1.png" alt="LAB-1 Vite React projesi ana sayfa ekran görüntüsü" />
+          </article>
+          <article>
+            <h3>Kişisel Portföy Sayfası</h3>
+            <img src="/proje2.png" alt="Semantik HTML ile hazırlanan portföy sayfası ekran görüntüsü" />
+          </article>
         </section>
 
         <section id="iletisim">
