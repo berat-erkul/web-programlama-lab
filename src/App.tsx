@@ -2,11 +2,11 @@ import './App.css'
 
 function App() {
   return (
-    <div>
+    <div className="card">
       <h1>Web Tasarimi ve Programlama</h1>
       <h2>LAB-1</h2>
-      <p>Ad Soyad: [Kendi Adin]</p>
-      <p>Ogrenci No: [Numaran]</p>
+      <p>Ad Soyad: Berat Erkul</p>
+      <p>Ogrenci No: 225542012</p>
     </div>
   )
 }
