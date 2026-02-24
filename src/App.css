@@ -1,10 +1,29 @@
 #root {
   min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   padding: 2rem;
   box-sizing: border-box;
+  position: relative;
+}
+
+/* Skip link: normalde gizli, Tab ile focus'ta görünür */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: #1e3a8a;
+  color: white;
+  padding: 8px 16px;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Focus göstergesi — klavye erişilebilirliği için kaldırılmamalı */
+:focus {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
 }
 
 .card {
@@ -40,6 +59,72 @@
   margin: 0.5rem 0;
   font-size: 0.95rem;
   color: #1a1a2e;
+}
+
+/* İletişim formu — doğrulama ve hata mesajı alanları */
+#iletisim form {
+  max-width: 480px;
+  margin-top: 1rem;
+}
+
+#iletisim fieldset {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+}
+
+#iletisim legend {
+  font-weight: 600;
+  padding: 0 0.5rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.35rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.error-msg {
+  display: block;
+  color: #b91c1c;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  min-height: 1.25rem;
+}
+
+#iletisim button[type="submit"] {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1.25rem;
+  background: #1e3a8a;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#iletisim button[type="submit"]:hover {
+  background: #1d4ed8;
 }
 
 @media (max-width: 480px) {
