@@ -92,9 +92,21 @@ main section h2 {
   line-height: 1.5;
 }
 
-#hakkimda ul {
-  margin: 0 0 1rem 0;
-  padding-left: 1.5rem;
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-md) 0;
+}
+
+.skill-tags li {
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
 }
 
 /* Proje kartları */

@@ -30,11 +30,13 @@ function App() {
             oluşturmayı hedefliyorum.
           </p>
           <p>Kullandığım teknolojiler:</p>
-          <ul>
+          <ul className="skill-tags" role="list" aria-label="Beceri etiketleri">
             <li>HTML5</li>
             <li>CSS3</li>
             <li>JavaScript</li>
             <li>React</li>
+            <li>TypeScript</li>
+            <li>Git</li>
             <li>Vite</li>
           </ul>
         </section>
