@@ -23,6 +23,9 @@ npm run dev
 ```
 Tarayicida http://localhost:5173 adresini ac.
 
+## LAB-2: Semantik HTML, Erisilebilirlik, Form
+Bu proje LAB-2 kapsaminda kisisel portfoy sayfasi icerir: semantik HTML5 (header, nav, main, section, article, footer), erisilebilirlik (skip link, ARIA, tab gecinme, alt metin), dogrulamali iletisim formu ve temel CSS. Lighthouse erisilebilirlik hedefi 90+ puandir; rapor Chrome DevTools > Lighthouse > Accessibility ile alinabilir. Ekran goruntusu repoda veya asagida eklenebilir.
+
 ## Ekran Goruntusu
 <img width="550" height="408" alt="Screenshot 2026-02-24 at 14 54 07" src="https://github.com/user-attachments/assets/11685a8e-b37f-4509-baf9-7d5eae226489" />
 

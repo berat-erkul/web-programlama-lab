@@ -21,7 +21,7 @@ function App() {
         <section id="hakkimda">
           <h2>Hakkımda</h2>
           <figure>
-            <img src="/profil.jpg" alt="Berat Erkul'in vesikalik fotografi" />
+            <img src="/profil.jpg" alt="Berat Erkul'in vesikalık fotoğrafı" />
             <figcaption>Berat Erkul</figcaption>
           </figure>
           <p>
