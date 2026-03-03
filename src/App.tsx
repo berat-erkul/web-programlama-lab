@@ -43,24 +43,42 @@ function App() {
 
         <section id="projeler">
           <h2>Projelerim</h2>
-          <article>
-            <h3>Web LAB-1 - Vite React Projesi</h3>
-            <p>
-              Vite ile oluşturulmuş React uygulaması. Hızlı geliştirme deneyimi ve modern
-              build araçları ile tek sayfa uygulama (SPA) yapısı.
-            </p>
-            <p><strong>Kullanılan teknolojiler:</strong> React, Vite, TypeScript</p>
-            <img src="/proje1.png" alt="LAB-1 Vite React projesi ana sayfa ekran görüntüsü" />
-          </article>
-          <article>
-            <h3>Kişisel Portföy Sayfası</h3>
-            <p>
-              Semantik HTML, erişilebilirlik ilkeleri ve doğrulamalı iletişim formu içeren
-              tek sayfalık kişisel portföy. Skip link, ARIA etiketleri ve anlamlı yapı.
-            </p>
-            <p><strong>Kullanılan teknolojiler:</strong> HTML5, CSS3, React, Vite</p>
-            <img src="/proje2.png" alt="Semantik HTML ile hazırlanan portföy sayfası ekran görüntüsü" />
-          </article>
+          <div className="project-grid">
+            <article className="project-card">
+              <img
+                src="/proje1.png"
+                alt="LAB-1 Vite React projesi ana sayfa ekran görüntüsü"
+              />
+              <h3>Web LAB-1 - Vite React Projesi</h3>
+              <p>
+                Vite ile oluşturulmuş React uygulaması. Hızlı geliştirme deneyimi ve modern
+                build araçları ile tek sayfa uygulama (SPA) yapısı.
+              </p>
+              <ul className="skill-tags" role="list" aria-label="Proje teknolojileri">
+                <li>React</li>
+                <li>Vite</li>
+                <li>TypeScript</li>
+              </ul>
+            </article>
+
+            <article className="project-card">
+              <img
+                src="/proje2.png"
+                alt="Semantik HTML ile hazırlanan portföy sayfası ekran görüntüsü"
+              />
+              <h3>Kişisel Portföy Sayfası</h3>
+              <p>
+                Semantik HTML, erişilebilirlik ilkeleri ve doğrulamalı iletişim formu içeren
+                tek sayfalık kişisel portföy. Skip link, ARIA etiketleri ve anlamlı yapı.
+              </p>
+              <ul className="skill-tags" role="list" aria-label="Proje teknolojileri">
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>React</li>
+                <li>Vite</li>
+              </ul>
+            </article>
+          </div>
         </section>
 
         <section id="iletisim">
