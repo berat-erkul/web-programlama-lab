@@ -7,7 +7,7 @@ function App() {
         Ana içeriğe atla
       </a>
       <header>
-        <h1>Berat Erkul - Kişisel Portföy</h1>
+        <h1 className="site-title">Berat Erkul - Kişisel Portföy</h1>
         <nav aria-label="Ana navigasyon">
           <ul>
             <li><a href="#hakkimda">Hakkımda</a></li>
