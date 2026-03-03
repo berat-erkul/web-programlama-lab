@@ -20,25 +20,29 @@ function App() {
       <main id="main-content">
         <section id="hakkimda">
           <h2>Hakkımda</h2>
-          <figure>
-            <img src="/profil.jpg" alt="Berat Erkul'in vesikalık fotoğrafı" />
-            <figcaption>Berat Erkul</figcaption>
-          </figure>
-          <p>
-            Web tasarımı ve programlama alanında kendimi geliştiriyorum. Semantik HTML,
-            erişilebilirlik ve modern front-end teknolojileri ile kullanıcı odaklı arayüzler
-            oluşturmayı hedefliyorum.
-          </p>
-          <p>Kullandığım teknolojiler:</p>
-          <ul className="skill-tags" role="list" aria-label="Beceri etiketleri">
-            <li>HTML5</li>
-            <li>CSS3</li>
-            <li>JavaScript</li>
-            <li>React</li>
-            <li>TypeScript</li>
-            <li>Git</li>
-            <li>Vite</li>
-          </ul>
+          <div className="about-content">
+            <figure>
+              <img src="/profil.jpg" alt="Berat Erkul'in vesikalık fotoğrafı" />
+              <figcaption>Berat Erkul</figcaption>
+            </figure>
+            <div>
+              <p>
+                Web tasarımı ve programlama alanında kendimi geliştiriyorum. Semantik HTML,
+                erişilebilirlik ve modern front-end teknolojileri ile kullanıcı odaklı arayüzler
+                oluşturmayı hedefliyorum.
+              </p>
+              <p>Kullandığım teknolojiler:</p>
+              <ul className="skill-tags" role="list" aria-label="Beceri etiketleri">
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+                <li>React</li>
+                <li>TypeScript</li>
+                <li>Git</li>
+                <li>Vite</li>
+              </ul>
+            </div>
+          </div>
         </section>
 
         <section id="projeler">

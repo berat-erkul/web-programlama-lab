@@ -70,20 +70,33 @@ main section {
   margin-bottom: var(--space-2xl);
 }
 
-main section h2 {
-  font-size: var(--text-lg);
-  margin: 0 0 1rem 0;
+section {
+  padding: var(--space-xl) var(--space-md);
+}
+
+section h2 {
+  font-size: var(--text-2xl);
   color: var(--color-primary);
+  margin-bottom: var(--space-lg);
+  text-align: center;
 }
 
-#hakkimda figure {
-  margin: 0 0 1rem 0;
+.about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg);
+  text-align: center;
 }
 
-#hakkimda img {
-  max-width: 180px;
-  height: auto;
-  border-radius: var(--radius-md);
+.about-content figure {
+  max-width: 200px;
+}
+
+.about-content img {
+  border-radius: var(--radius-full);
+  aspect-ratio: 1;
+  object-fit: cover;
 }
 
 #hakkimda p,
@@ -161,16 +174,16 @@ main section h2 {
 
 /* Footer */
 footer {
+  text-align: center;
+  padding: var(--space-xl) var(--space-md);
+  background: var(--color-surface);
   border-top: 1px solid var(--color-border);
-  padding-top: var(--space-md);
-  margin-top: var(--space-2xl);
-  background-color: var(--color-surface);
+  color: var(--color-muted);
+  font-size: var(--text-sm);
 }
 
 footer p {
   margin: 0 0 0.5rem 0;
-  font-size: var(--text-sm);
-  color: var(--color-muted);
 }
 
 footer .footer-links {
@@ -264,27 +277,39 @@ footer .footer-links a:hover {
 }
 
 .form-group {
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-md);
 }
 
 label {
   display: block;
-  margin-bottom: 0.25rem;
+  margin-bottom: var(--space-xs);
+  font-weight: 600;
 }
 
 input,
 textarea,
 select {
   width: 100%;
-  padding: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
   box-sizing: border-box;
+  font-family: inherit;
+  font-size: var(--text-base);
+  transition: border-color var(--transition-fast);
 }
 
 .form-group textarea {
   resize: vertical;
   min-height: 100px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--color-primary);
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
 }
 
 .error-msg {
@@ -295,7 +320,7 @@ select {
   min-height: 1.25rem;
 }
 
-#iletisim button[type="submit"] {
+button[type='submit'] {
   margin-top: 0.5rem;
   padding: var(--space-sm) var(--space-lg);
   background: var(--color-primary);
@@ -307,8 +332,50 @@ select {
   transition: background var(--transition-fast);
 }
 
-#iletisim button[type="submit"]:hover {
+button[type='submit']:hover,
+button[type='submit']:focus {
   background: var(--color-secondary);
+}
+
+/* ========================================
+   TABLET (640 px ve üzeri)
+   ======================================== */
+@media (min-width: 640px) {
+  section {
+    padding: var(--space-2xl) var(--space-xl);
+  }
+
+  .about-content {
+    flex-direction: row;
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .about-content figure {
+    flex-shrink: 0;
+  }
+
+  button[type='submit'] {
+    width: auto;
+  }
+}
+
+/* ========================================
+   MASAÜSTÜ (1024 px ve üzeri)
+   ======================================== */
+@media (min-width: 1024px) {
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  section {
+    padding: var(--space-3xl) var(--space-xl);
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media (max-width: 480px) {

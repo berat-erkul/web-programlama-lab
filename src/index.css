@@ -1,5 +1,9 @@
 @import './styles/tokens.css';
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Genel sıfırlama (Uygulama-6) */
 *,
 *::before,
