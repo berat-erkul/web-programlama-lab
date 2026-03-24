@@ -1,8 +1,62 @@
-import Button from './components/Button'
-import Input from './components/Input'
-import Card from './components/Card'
+import { useState, useEffect } from "react";
+import type {
+  Project, Category, SortField, SortOrder
+} from "./types/project";
+import { fetchProjects } from
+  "./services/projectService";
+import { applyFilters } from
+  "./utils/projectHelpers";
+import Card from "./components/Card";
+import Input from "./components/Input";
+import Button from "./components/Button";
+import Alert from "./components/Alert";
 
-function App() {
+export default function App() {
+  // --- STATE ---
+  const [projects, setProjects] =
+    useState<Project[]>([]);
+  const [search, setSearch] = useState("");
+  const [category, setCategory] =
+    useState<Category | "all">("all");
+  const [sortField, setSortField] =
+    useState<SortField>("year");
+  const [sortOrder, setSortOrder] =
+    useState<SortOrder>("desc");
+  const [loading, setLoading] = useState(true);
+  const [error, setError] =
+    useState<string | null>(null);
+
+  // --- VERi CEKME ---
+  useEffect(() => {
+    async function load() {
+      try {
+        setLoading(true);
+        setError(null);
+        const data = await fetchProjects();
+        setProjects(data);
+      } catch (err) {
+        setError(
+          err instanceof Error
+            ? err.message
+            : "Bilinmeyen hata"
+        );
+      } finally {
+        setLoading(false);
+      }
+    }
+    load();
+  }, []);
+
+  // --- TURETILMIS (DERIVED) VERi ---
+  const filtered = applyFilters(
+    projects, search, category,
+    sortField, sortOrder
+  );
+
+  const categories: (Category | "all")[] =
+    ["all", "frontend", "fullstack", "backend"];
+
+  // --- UI ---
   return (
     <div className="min-h-screen bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors">
       {/* Skip Link */}
@@ -82,23 +136,113 @@ function App() {
           </div>
         </section>
 
-        {/* Projelerim */}
+        {/* Projelerim — JSON'dan Fetch + Filtreleme + Sıralama */}
         <section id="projeler" className="py-16 px-4 bg-gray-50 dark:bg-gray-900">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-10">
+            <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
               Projelerim
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              <Card variant="elevated" title="E-Ticaret Sitesi" image="/proje1.png" imageAlt="E-Ticaret anasayfa görünümü">
-                <p>React ve Node.js ile tam kapsamlı uygulama.</p>
-              </Card>
-              <Card variant="elevated" title="Kişisel Portföy" image="/proje2.png" imageAlt="Portföy sayfası ekran görüntüsü">
-                <p>Semantik HTML ve erişilebilirlik ilkeleri ile.</p>
-              </Card>
-              <Card variant="elevated" title="Blog Platformu" image="/proje1.png" imageAlt="Blog platformu ekran görüntüsü">
-                <p>TypeScript ve Vite ile modern blog.</p>
-              </Card>
+
+            {/* HATA DURUMU */}
+            {error && (
+              <Alert variant="error" title="Hata">
+                {error}
+              </Alert>
+            )}
+
+            {/* FILTRELER */}
+            <div className="flex flex-col sm:flex-row gap-4 mb-8">
+              <Input
+                id="search"
+                placeholder="Proje ara..."
+                value={search}
+                onChange={e => setSearch(e.target.value)}
+              />
+
+              <div className="flex gap-2 flex-wrap">
+                {categories.map(cat => (
+                  <Button
+                    key={cat}
+                    variant={category === cat ? "primary" : "ghost"}
+                    size="sm"
+                    onClick={() => setCategory(cat)}
+                  >
+                    {cat === "all" ? "Tumu" : cat}
+                  </Button>
+                ))}
+              </div>
+
+              <div className="flex gap-2">
+                <select
+                  value={sortField}
+                  onChange={e => setSortField(
+                    e.target.value as SortField
+                  )}
+                  className="border rounded-lg px-3 py-2 dark:bg-gray-800 dark:text-white"
+                >
+                  <option value="year">Yil</option>
+                  <option value="title">Baslik</option>
+                </select>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => setSortOrder(
+                    o => o === "asc" ? "desc" : "asc"
+                  )}
+                >
+                  {sortOrder === "asc" ? "A-Z" : "Z-A"}
+                </Button>
+              </div>
             </div>
+
+            {/* YUKLENIYOR */}
+            {loading && (
+              <p className="text-center text-gray-500">
+                Yukleniyor...
+              </p>
+            )}
+
+            {/* PROJE LISTESI */}
+            {!loading && filtered.length === 0 && (
+              <p className="text-center text-gray-500">
+                Eslesen proje bulunamadi.
+              </p>
+            )}
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filtered.map(project => (
+                <Card
+                  key={project.id}
+                  variant="elevated"
+                  title={project.title}
+                  image={project.image}
+                  imageAlt={`${project.title} ekran goruntusu`}
+                >
+                  <p className="text-sm mb-3">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-1">
+                    {project.tech.map(t => (
+                      <span
+                        key={t}
+                        className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-2 py-0.5 rounded-full"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                  <p className="text-xs text-gray-400 mt-2">
+                    {project.year} &middot; {project.category}
+                  </p>
+                </Card>
+              ))}
+            </div>
+
+            {/* SONUC SAYISI */}
+            <p className="text-sm text-gray-500 mt-4 text-center">
+              {filtered.length} / {projects.length}{" "}
+              proje gosteriliyor
+            </p>
           </div>
         </section>
 
@@ -136,12 +280,7 @@ function App() {
       {/* Footer */}
       <footer className="bg-gray-100 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 text-center py-6 px-4 text-gray-500 dark:text-gray-400 text-sm">
         <p>&copy; 2025 Berat Erkul. Tüm hakları saklıdır.</p>
-        <a href="#ui-kit" onClick={() => window.location.hash = '#ui-kit'} className="text-blue-600 dark:text-blue-400 hover:underline mt-2 inline-block">
-          UI Kit Sayfası
-        </a>
       </footer>
     </div>
-  )
+  );
 }
-
-export default App
