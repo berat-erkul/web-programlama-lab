@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "E-Ticaret Platformu",
-    "description": "React ve Node.js ile tam kapsamli e-ticaret uygulamasi.",
+    "description": "React ve Node.js ile tam kapsamlı e-ticaret uygulaması.",
     "tech": ["React", "Node.js", "MongoDB"],
     "year": 2024,
     "category": "fullstack",
@@ -11,8 +11,8 @@
   },
   {
     "id": 2,
-    "title": "Blog Uygulamasi",
-    "description": "Next.js ile SEO dostu kisisel blog platformu.",
+    "title": "Blog Uygulaması",
+    "description": "Next.js ile SEO dostu kişisel blog platformu.",
     "tech": ["Next.js", "TypeScript", "Tailwind"],
     "year": 2024,
     "category": "frontend",
@@ -22,7 +22,7 @@
   {
     "id": 3,
     "title": "Hava Durumu API",
-    "description": "OpenWeather API ile anlik hava durumu sorgulama.",
+    "description": "OpenWeather API ile anlık hava durumu sorgulama.",
     "tech": ["JavaScript", "REST API", "CSS"],
     "year": 2023,
     "category": "frontend",
@@ -31,8 +31,8 @@
   },
   {
     "id": 4,
-    "title": "Gorev Yoneticisi",
-    "description": "Drag-and-drop destekli Kanban tarzi gorev panosu.",
+    "title": "Görev Yöneticisi",
+    "description": "Sürükle-bırak destekli Kanban tarzı görev panosu.",
     "tech": ["React", "TypeScript", "DnD Kit"],
     "year": 2024,
     "category": "frontend",
@@ -41,12 +41,22 @@
   },
   {
     "id": 5,
-    "title": "Chat Uygulamasi",
-    "description": "WebSocket ile gercek zamanli mesajlasma.",
+    "title": "Chat Uygulaması",
+    "description": "WebSocket ile gerçek zamanlı mesajlaşma.",
     "tech": ["React", "Socket.io", "Express"],
     "year": 2023,
     "category": "fullstack",
     "featured": true,
     "image": "/images/chat.jpg"
+  },
+  {
+    "id": 6,
+    "title": "REST API Servisi",
+    "description": "Express ve PostgreSQL ile ölçeklenebilir backend API.",
+    "tech": ["Node.js", "Express", "PostgreSQL"],
+    "year": 2024,
+    "category": "backend",
+    "featured": false,
+    "image": ""
   }
 ]
