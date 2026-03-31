@@ -1,31 +1,34 @@
-# Web LAB-1 - Hello Project
+# Web Tasarımı ve Programlama — Portföy (LAB-6 Checkpoint #1)
 
-## Hakkinda
-Bu proje, Web Tasarimi ve Programlama dersi LAB-1 kapsaminda Vite + React + TypeScript kullanilarak olusturulmustur.
+## Hakkında
+Bu proje, Web Tasarımı ve Programlama dersi kapsamında **Vite + React + TypeScript + Tailwind** ile geliştirilmiştir. LAB-6 Checkpoint #1: portföy bölümleri, JSON’dan proje listesi, filtreleme/sıralama ve kontrollü iletişim formu içerir.
 
-## Gelistirici
+## Geliştirici
 - **Ad Soyad:** Berat Erkul
-- **Ogrenci No:** 225542012
+- **Öğrenci No:** 225542012
 
-## Kullanilan Teknolojiler
+## Kullanılan teknolojiler
 - React 18
 - TypeScript
 - Vite
+- Tailwind CSS v4
 
 ## Kurulum
 ```bash
 npm install
 ```
 
-## Calistirma
+## Çalıştırma
 ```bash
 npm run dev
 ```
-Tarayicida http://localhost:5173 adresini ac.
+Tarayıcıda http://localhost:5173 adresini aç.
 
-## LAB-2: Semantik HTML, Erisilebilirlik, Form
-Bu proje LAB-2 kapsaminda kisisel portfoy sayfasi icerir: semantik HTML5 (header, nav, main, section, article, footer), erisilebilirlik (skip link, ARIA, tab gecinme, alt metin), dogrulamali iletisim formu ve temel CSS. Lighthouse erisilebilirlik hedefi 90+ puandir; rapor Chrome DevTools > Lighthouse > Accessibility ile alinabilir. Ekran goruntusu repoda veya asagida eklenebilir.
+## LAB-2 (özet)
+Semantik HTML5, erişilebilirlik (skip link, ARIA), doğrulamalı form ve temel CSS / Lighthouse notları önceki laboratuvarlarda tamamlandı.
 
-## Ekran Goruntusu
+## Ekran görüntüsü
 <img width="550" height="408" alt="Screenshot 2026-02-24 at 14 54 07" src="https://github.com/user-attachments/assets/11685a8e-b37f-4509-baf9-7d5eae226489" />
 
+## Git iş akışı (föy)
+LAB-6 Checkpoint #1 kodu yalnızca **`feature/checkpoint-1`** dalındadır (`main` şu an bu çalışmayı içermez). Teslim için arkadaş review’lu **Pull Request** ile `main`’e birleştirme yapılır.
