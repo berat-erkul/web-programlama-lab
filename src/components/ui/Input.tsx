@@ -1,14 +1,14 @@
-import { InputHTMLAttributes } from 'react'
+import type { InputHTMLAttributes } from "react";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  label?: string
-  error?: string
-  helpText?: string
+  label?: string;
+  error?: string;
+  helpText?: string;
 }
 
 export default function Input({
   label,
-  type = 'text',
+  type = "text",
   error,
   helpText,
   id,
@@ -16,14 +16,14 @@ export default function Input({
 }: InputProps) {
   return (
     <div className="space-y-1">
-      {label && (
+      {label ? (
         <label
           htmlFor={id}
           className="block text-sm font-medium text-gray-700 dark:text-gray-300"
         >
           {label}
         </label>
-      )}
+      ) : null}
       <input
         id={id}
         type={type}
@@ -32,13 +32,15 @@ export default function Input({
           border transition-colors
           focus:outline-none focus:ring-2
           dark:bg-gray-800 dark:text-gray-100
-          ${error
-            ? 'border-red-500 focus:ring-red-500'
-            : 'border-gray-300 focus:ring-blue-500'
+          ${
+            error
+              ? "border-red-500 focus:ring-red-500"
+              : "border-gray-300 focus:ring-blue-500"
           }
-          ${props.disabled
-            ? 'bg-gray-100 cursor-not-allowed'
-            : 'bg-white dark:bg-gray-800'
+          ${
+            props.disabled
+              ? "bg-gray-100 cursor-not-allowed"
+              : "bg-white dark:bg-gray-800"
           }
         `}
         aria-describedby={
@@ -46,16 +48,20 @@ export default function Input({
         }
         {...props}
       />
-      {error && (
-        <p id={`${id}-error`} role="alert" className="text-sm text-red-600 dark:text-red-400">
+      {error ? (
+        <p
+          id={`${id}-error`}
+          role="alert"
+          className="text-sm text-red-600 dark:text-red-400"
+        >
           {error}
         </p>
-      )}
-      {helpText && !error && (
+      ) : null}
+      {helpText && !error ? (
         <p id={`${id}-help`} className="text-sm text-gray-500 dark:text-gray-400">
           {helpText}
         </p>
-      )}
+      ) : null}
     </div>
-  )
+  );
 }
